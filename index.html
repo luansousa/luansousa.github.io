@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-br" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.87.0">
+    <title>Calculadora de Tópicos de Aula</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+    <!-- Bootstrap core CSS -->
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+ <script>
+  
+		function Calcular(){
+      var ch = parseInt(document.getElementById('ch').value)*60;
+      var qtd_hora_aula = parseInt(document.getElementById('qtd_hora_aula').value)*50;
+
+      var calc= ch/qtd_hora_aula;
+
+      document.getElementById('mostrar').innerHTML = calc;
+    }
+     
+
+ </script>
+
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0"></h3>
+    </div>
+  </header>
+
+  <main class="px-3 text-center">
+    <h1>Calculadora de Tópicos de Aula</h1>
+    <p class="lead">Abaixo, calcule quantos tópicos de aula são necessários para sua disciplina, 
+      levando em consideração: <b>Carga Horária da disciplina</b>, <b>Duração de um horário de Aula (50 minutos)</b> e quantos <b> Horários de aula por dia</b></p>
+        <form>
+       
+          <h1 class="h3 mb-3 fw-normal">Informe os dados abaixo</h1>
+      
+          <div class="form-floating">
+            <input  type="number" class="form-control"  id="ch">
+            <label style="color:black" for="floatingInput">Carga Horária da Disciplina (horas)</label>
+          </div>
+          <div class="form-floating">
+            <input  type="number" class="form-control"  id="qtd_hora_aula">
+            <label style="color:black" for="floatingPassword">Quantos Horários de Aula por dia</label>
+          </div>
+      
+          <div class="checkbox mb-3">
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="button"  id="calcular" onclick="Calcular()">Calcular</button>
+          <hr/>
+          
+          <div class="checkbox mb-3">
+              <h2>A quantidade de tópicos de aula para sua disciplina é:</h2>
+              <h2 id="mostrar" style="color:red"></h2>
+             
+          </div>
+        </form>
+
+  </main>
+
+
+  <footer class="mt-auto text-white-50">
+    <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white" target="_blank">@mdo</a> and Edited by <a href="https://www.linkedin.com/in/luan-felipe-305032144/" class="text-white" target="_blank"> Luan Felipe.</a></p>
+  </footer>
+</div>
+
+  </body>
+</html>
