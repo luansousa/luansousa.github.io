@@ -33,12 +33,15 @@
  <script>
   
 		function Calcular(){
-      var ch = parseInt(document.getElementById('ch').value)*60;
-      var qtd_hora_aula = parseInt(document.getElementById('qtd_hora_aula').value)*50;
+      var qtd_dia_aula = document.getElementById('qtd_dia_aula').value
+      var ch = parseInt(document.getElementById('ch').value);
+      var qtd_hora_aula = parseInt(document.getElementById('qtd_hora_aula').value);
 
-      var calc= ch/qtd_hora_aula;
+      var horarios_semestre = ch/50*60;
+      var semanas = horarios_semestre/qtd_hora_aula;
+      var topicos= semanas*qtd_dia_aula;
 
-      document.getElementById('mostrar').innerHTML = calc;
+      document.getElementById('mostrar').innerHTML = topicos;
     }
      
 
@@ -68,7 +71,11 @@
           </div>
           <div class="form-floating">
             <input  type="number" class="form-control"  id="qtd_hora_aula">
-            <label style="color:black" for="floatingPassword">Quantos Horários de Aula por dia</label>
+            <label style="color:black" for="floatingPassword">Quantos Horários de Aula na Semana</label>
+          </div>
+          <div class="form-floating">
+            <input  type="number" class="form-control"  id="qtd_dia_aula">
+            <label style="color:black" for="floatingPassword">Quantidade de Dias de Aula na Semana</label>
           </div>
       
           <div class="checkbox mb-3">
